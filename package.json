@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/mborman/HelloWorldExclamationApp",
   "dependencies": {
+    "ModuleExclamation": "git://github.com/mborman/ModuleExclamation.git",
     "ModuleHello": "git://github.com/mborman/ModuleHello.git",
+    "ModuleWorld": "git://github.com/mborman/ModuleWorld.git",
     "debug": "^2.2.0",
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "jade": "^1.11.0",
+    "requirejs": "^2.1.18"
   }
 }

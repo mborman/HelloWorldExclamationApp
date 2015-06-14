@@ -8,7 +8,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function(req, res/*, next*/) {
-  res.end(Hello.value() + " " + World.value() + Exclamation.value());
+
+  res.render("index", {
+    htmlTitle: "test",
+    pageTitle: "page title",
+    headerText: "from the server: " +  Hello.value() + " " + World.value() + Exclamation.value()});
 });
 
 module.exports = router;

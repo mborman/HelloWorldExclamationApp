@@ -1,18 +1,24 @@
-var requirejs = require('requirejs');
-
-requirejs.config({
-  //Pass the top-level main.js/index.js require
-  //function to requirejs so that node modules
-  //are loaded relative to the top-level JS file.
-  nodeRequire: require
+require.config({
+  paths: {
+    lib: '../../node_modulesa'
+  }
 });
 
-requirejs([ModuleHello],
-  function(ModuleHello) {
+require([
+    '../lib/ModuleHello/index',
+    '../lib/ModuleWorld/index',
+    '../lib/ModuleExclamation/index'
+  ],
+  function(ModuleHello,
+    ModuleWorld,
+    ModuleExclamation) {
 
     "use strict";
 
-   
+    var div = document.createElement("div");
+    div.innerHTML = "From Client:" + ModuleHello.value() + " " + 
+      ModuleWorld.value() + ModuleExclamation.value();
 
+    document.getElementsByTagName('body')[0].appendChild(div);
   }
 );
